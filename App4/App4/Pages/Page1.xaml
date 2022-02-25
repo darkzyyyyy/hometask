@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.Pages.Page1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Загрузить всех работников ..."
+                    Command="{Binding OutputAllData}"/>
+            <Button Text="Загрузить работника..."
+                    Command="{Binding OutputData}"/>
+            <Button Text="Внести данные..."
+                    Command="{Binding InputData}"/>
+            <ScrollView> 
+                <StackLayout
+                BindableLayout.ItemsSource="{Binding Workers}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame
+                                BorderColor="White">
+                                <StackLayout>
+                                    <Label Text="{Binding Id}"
+                                           TextColor="Black"
+                                           FontSize="25"/>
+                                    <Label Text="{Binding Name}" 
+                                           TextColor="Black"
+                                           FontSize="30"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
